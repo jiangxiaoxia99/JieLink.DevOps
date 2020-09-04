@@ -355,19 +355,30 @@ namespace PartialViewSyncTool
             System.IO.File.WriteAllText("DbBoxConfig.ini", Newtonsoft.Json.JsonConvert.SerializeObject(dbconfig.BoxDbConnStrs), Encoding.UTF8);
         }
 
-        private void ReadBoxConfig(ref string str, string ip)
+        private bool ReadBoxConfig(ref string str, string ip)
         {
             if (File.Exists(@"DbBoxConfig.ini"))
             {
                 string ReadStr = File.ReadAllText(@"DbBoxConfig.ini");
                 DbConfig.BoxDbConnStrs = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DbConnEntity>>(ReadStr);
-                DbConnEntity find = DbConfig.BoxDbConnStrs.Find(a => a.Ip == ip);
-                if (find != null)
-                    str = $"Data Source={find.Ip};port={find.Port};User ID={find.UserName};Password={find.Password};Initial Catalog={find.DbName};";
-                else
-                    return;
+                if (DbConfig.BoxDbConnStrs != null)
+                {
+                    DbConnEntity find = DbConfig.BoxDbConnStrs.Find(a => a.Ip == ip);
+                    if (find != null)
+                    {
+                        str = $"Data Source={find.Ip};port={find.Port};User ID={find.UserName};Password={find.Password};Initial Catalog={find.DbName};";
+                        DbConfig.BoxDbConnStrs.Remove(find);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+
             }
-            return;
+            return false;
         }
 
         private void chbVersion_Checked(object sender, RoutedEventArgs e)

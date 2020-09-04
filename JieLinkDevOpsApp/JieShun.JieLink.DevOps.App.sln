@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialViewMySqlBackUp", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialViewImportPlate", "PartialView\PartialViewImportPlate\PartialViewImportPlate.csproj", "{844EB0D1-7217-402D-82EB-D0FDFD84694A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialViewDateCheck", "PartialView\PartialViewDateCheck\PartialViewDateCheck.csproj", "{9560A755-5A29-4299-A40A-80B249F13382}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{844EB0D1-7217-402D-82EB-D0FDFD84694A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{844EB0D1-7217-402D-82EB-D0FDFD84694A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{844EB0D1-7217-402D-82EB-D0FDFD84694A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9560A755-5A29-4299-A40A-80B249F13382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9560A755-5A29-4299-A40A-80B249F13382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9560A755-5A29-4299-A40A-80B249F13382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9560A755-5A29-4299-A40A-80B249F13382}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
